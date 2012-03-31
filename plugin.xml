@@ -18,7 +18,7 @@
         </pluginIncludePaths>
         <pluginNamespaces>
             <namespace>Contact</namespace>
-            <namespace>Contact</namespace>
+            <namespace>Twitter</namespace>
         </pluginNamespaces>
         <pluginJsPaths>
             <path>/Contact/static/js/contactplugin.js</path>

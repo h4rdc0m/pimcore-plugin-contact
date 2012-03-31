@@ -21,18 +21,17 @@
  */
 
 /**
- * Example contact form.
+ * Example contact form with Twitter Bootstrap look&feel.
  *
  * @category    Pimcore
  * @package     Plugin_Contact
  * @author      Rafał Gałka <rafal@modernweb.pl>
  * @copyright   Copyright (c) 2007-2011 ModernWeb (http://www.modernweb.pl)
  */
-class Contact_Form extends Zend_Form
+class Contact_Form extends Twitter_Bootstrap_Form_Horizontal
 {
     public function init()
     {
-        $this->setIsArray(true);
         $this->setElementsBelongTo('contact');
 
         $this->addElement('text', 'name', array(
@@ -91,9 +90,22 @@ class Contact_Form extends Zend_Form
         ));
 
         $this->addElement('button', 'submit', array(
-            'label' => 'Send message',
-            'type' => 'submit',
+            'label'      => 'Send message',
+            'type'       => 'submit',
+            'buttonType' => Twitter_Bootstrap_Form_Element_Submit::BUTTON_SUCCESS,
+            'icon'       => 'ok',
+            'whiteIcon'  => false,
+            'escape'     => false
         ));
+
+        $this->addDisplayGroup(
+            array('submit'),
+            'actions',
+            array(
+                'disableLoadDefaultDecorators' => true,
+                'decorators' => array('Actions')
+            )
+        );
     }
 
 }
